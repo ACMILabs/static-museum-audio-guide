@@ -45,6 +45,8 @@ There is also a simple page at `/connected` as a landing page if you are using C
 14. In `_layouts/welcome/html` update the mark-up of the welcome pages to give an overview to your web app.
 15. Once you're happy with your audio guide, drop in your own Google Analytics or Google Tag Manager snippet into `_includes/tagmanager.html`.
 
+Each time you update the JS or CSS files, you may wish to update `version_number` in `config.yml`. This is appended a query string to the CSS link and JS script tag in the Head element for [cache busting](https://css-tricks.com/strategies-for-cache-busting-css/).
+
 ## Deployment
 
 Since this is just a straightforward Jekyll site, you can deploy it straight to Github pages. Follow the instructions here: https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/
