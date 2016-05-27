@@ -1,0 +1,167 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- place fav icons here -->
+
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <!-- Twitter cards and OG Image for Facebook -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="{{ site.twitter_username }}" />
+  <meta name="twitter:creator" content="{{ site.twitter_username }}" />
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}" />
+  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+  
+  <meta name="og:image" content="{{ site.baseurl | prepend: site.url }}/assets/img/meta/og-image.jpg" />
+  <meta name="twitter:image" content="{{ site.baseurl | prepend: site.url }}/assets/img/meta/og-image.jpg" />
+
+  <!-- Canonical urls -->
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+
+  <!-- Stylesheets -->
+
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/js/slick.css" />
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/js/slick-theme.css" />
+
+  <!-- jQuery -->
+  <script src="{{ site.baseurl }}/assets/js/jquery-1.12.3.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/slick.min.js"></script>
+
+  <!-- jPlayer -->
+  <script src="{{ site.baseurl }}/assets/js/jplayer/jquery.jplayer.min.js"></script>
+
+  <!-- CSS for this web app -->
+  <link rel='stylesheet' href='{{ "/assets/css/main.css" | prepend: site.baseurl }}?v={{ site.version_number }}'>
+
+  <script type="text/javascript">
+
+// The JS code here is render blocking. We liked it this way, but you might want to change it if this sort of thing
+// worries you. More info on this here: https://varvy.com/pagespeed/render-blocking.html
+// The advantage of render blocking the below code is to prevent some flicker on page-load to make the audio guide
+// feel a little more 'app-like', but you mightn't find it necessary.
+
+
+// add fixedPosition support check, pulled from jQuery Mobile
+// This isn't a true check, but just flagging browsers with known issues with fixed positioning.
+// This is preferable to attempting to do a real check given the current widespread support for
+// Fixed positioning, so the devices that still have problems with it are fairly well known
+
+function fixedPosition() {
+  var w = window,
+    ua = navigator.userAgent,
+    platform = navigator.platform,
+    // Rendering engine is Webkit, and capture major version
+    wkmatch = ua.match( /AppleWebKit\/([0-9]+)/ ),
+    wkversion = !!wkmatch && wkmatch[ 1 ],
+    ffmatch = ua.match( /Fennec\/([0-9]+)/ ),
+    ffversion = !!ffmatch && ffmatch[ 1 ],
+    operammobilematch = ua.match( /Opera Mobi\/([0-9]+)/ ),
+    omversion = !!operammobilematch && operammobilematch[ 1 ];
+
+  if (
+    // iOS 4.3 and older : Platform is iPhone/Pad/Touch and Webkit version is less than 534 (ios5)
+    ( ( platform.indexOf( "iPhone" ) > -1 || platform.indexOf( "iPad" ) > -1  || platform.indexOf( "iPod" ) > -1 ) && wkversion && wkversion < 534 ) ||
+    // Opera Mini
+    ( w.operamini && ({}).toString.call( w.operamini ) === "[object OperaMini]" ) ||
+    ( operammobilematch && omversion < 7458 ) ||
+    //Android lte 2.1: Platform is Android and Webkit version is less than 533 (Android 2.2)
+    ( ua.indexOf( "Android" ) > -1 && wkversion && wkversion < 533 ) ||
+    // Firefox Mobile before 6.0 -
+    ( ffversion && ffversion < 6 ) ||
+    // WebOS less than 3
+    ( "palmGetResource" in window && wkversion && wkversion < 534 ) ||
+    // MeeGo
+    ( ua.indexOf( "MeeGo" ) > -1 && ua.indexOf( "NokiaBrowser/8.5.0" ) > -1 ) ) {
+    return false;
+  }
+
+  return true;
+}
+
+$.extend( $.support, {
+  fixedPosition: fixedPosition()
+});
+
+// fixed position audio player
+
+if ($.support.fixedPosition) {
+ $("<style>").prop("type", "text/css").html("\
+    .audio-footer-container { \
+      position: fixed; \
+    }")
+  .appendTo("head");
+}
+
+// Prevent links from opening in a new window when viewing from iOS home screen
+// Helps ensure a more 'web appy' expierence.
+// Adjusted from gist posted by Github user @irae on @kylebarrow's Gist at:
+// https://gist.github.com/kylebarrow/1042026
+// this snippet available at: https://gist.github.com/irae/1042167
+// It's a whole document event listener, so will continue to work even if other links are added to the DOM after
+// the initial pageload. The while loop ensures that it bubbles up to hit any anchor links that have been clicked.
+
+  (function(document,navigator,standalone) {
+    // prevents links from apps from oppening in mobile safari
+    // this javascript must be the first script in your <head>
+    if ((standalone in navigator) && navigator[standalone]) {
+      var curnode, location=document.location, stop=/^(a|html)$/i;
+      document.addEventListener('click', function(e) {
+        curnode=e.target;
+        
+        while (!(stop).test(curnode.nodeName)) {
+          curnode=curnode.parentNode;
+        }
+        // Condidions to do this only on links to your own app
+        // if you want all links, use if('href' in curnode) instead.
+        if (curnode.className.indexOf("dont-use-ios-override") == -1) {
+          if(
+            'href' in curnode && // is a link
+            (chref=curnode.href).replace(location.href,'').indexOf('#') && // is not an anchor
+            ( !(/^[a-z\+\.\-]+:/i).test(chref) ||                       // either does not have a proper scheme (relative links)
+              chref.indexOf(location.protocol+'//'+location.host)===0 ) // or is in the same protocol and domain
+          ) {
+            e.preventDefault();
+            location.href = curnode.href;
+          }
+        }
+      },false);
+    }
+  })(document,window.navigator,'standalone');
+
+// Initialise jPlayer, grabbed the MP3 source file from the audio element on the page.
+$(document).ready(function(){
+
+  $("#jquery_jplayer_1").jPlayer({
+    ready: function () {
+      $("#episode-element").hide();
+      $(this).jPlayer("setMedia", {
+        title: "",
+        mp3: $("#episode-source").attr("src")
+      });
+
+    },
+    swfPath: "{{ site.baseurl }}/assets/js/jplayer",
+    supplied: "mp3",
+    wmode: "window",
+    useStateClassSkin: true,
+    autoBlur: false,
+    smoothPlayBar: true,
+    keyEnabled: true,
+    remainingDuration: true,
+    toggleDuration: true
+  });
+});
+
+  </script>
+    <!-- JS for this web app -->
+  <script src="{{ site.baseurl }}/assets/js/main.js?v={{ site.version_number }}"></script>
+</head>

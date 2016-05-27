@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    {% include tagmanager.html %}
+    {% include header-episode.html %}
+    <div class="slide-menu">
+  <h2>{{ site.menu_heading }}</h2>
+  <ul class="post-list">
+    {% assign pages = site.pages | sort: 'page_rank' %}
+    {% for my_page in pages %}{% if (my_page.section_title != null) and my_page.type == 'stop' %}<li>
+        <a class="post-link" href="{{ my_page.url | prepend: site.baseurl }}" style="background-image: url('{{ site.baseurl }}{{ site.headphones_icon_color }}');">
+          <span class="post-item">{{ my_page.stop_id }}</span>
+        </a>
+      </li>{% endif %}{% endfor %}
+  </ul>
+</div>
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+  <div class="jp-gui jp-interface audio-footer-container" data-role="footer" data-position="fixed" data-tap-toggle="false">
+    <div class="audio-player">
+      
+      <div class="player-now-playing">
+        <p>
+        {{ page.title }}
+        </p>
+      </div>
+
+      {% if page.audio_file != null %}
+      <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+      <div id="episode-element">
+        <audio>
+          <source id="episode-source" src="{{ site.baseurl }}{{ site.audio_path }}{{ page.audio_file }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <div class="jp-progress">
+        <div class="jp-seek-bar">
+          <div class="jp-play-bar"></div>
+        </div>
+      </div>
+          
+      <div class="jp-no-solution">
+        <span>Update Required</span>
+        To play audio, be sure to enable JavaScript, and run a browser that supports HTML5 MP3 audio, or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+      </div>
+
+      {% endif %}
+      
+      <div class="player-buttons">
+        <div class="player-buttons-prev">
+          {% for my_page in site.pages %}
+            {% capture page_rank_lower %}{{my_page.page_rank | plus: 1}}{% endcapture %}
+            {% capture existing_page_rank %}{{page.page_rank | plus: 0}}{% endcapture %}
+            {% if page_rank_lower == existing_page_rank and my_page.page_rank != null %}
+              <a href="{{ my_page.url | prepend: site.baseurl }}"></a>
+              <span class="player-buttons-prev-number">{{ my_page.stop_id }}</span>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        {% if page.audio_file != null %}
+        <div class="jp-controls" style="display: inline-block; text-align: center;">
+          <button class="jp-play" role="button" tabindex="0" style="display: inline-block;"></button>
+        </div>
+        {% endif %}
+
+        <div class="player-buttons-next">
+          {% for my_page in site.pages %}
+            {% capture page_rank_higher %}{{my_page.page_rank | minus: 1}}{% endcapture %}
+            {% capture existing_page_rank %}{{page.page_rank | plus: 0}}{% endcapture %}
+            {% if page_rank_higher == existing_page_rank and my_page.page_rank != null %}
+              <a href="{{ my_page.url | prepend: site.baseurl }}"></a>
+              <span class="player-buttons-next-number">{{ my_page.stop_id }}</span>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  </div>
+
+  </body>
+
+</html>

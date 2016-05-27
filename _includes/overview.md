@@ -1,0 +1,1 @@
+Select an audio guide stop to begin.
