@@ -6,7 +6,7 @@ A [Jekyll](http://jekyllrb.com/) static site generator theme for building lightw
 
 This template is built on top of the [Jekyll new](https://github.com/jglovier/jekyll-new) theme by [Joel Glovier](http://joelglovier.com/). While it is reusable in its current form, it was purpose built for the Scorsese Exhibition at ACMI. Take a look at a live version, and view the [Scorsese Audio Guide](https://guides.acmi.net.au/scorsese/welcome).
 
-Some image editing / Photoshop skills will be required to build a finished guide. Parts of the theme (such as the welcome page)
+Some image editing / Photoshop skills will be required to build a finished guide. Parts of the theme (such as the welcome page) are just plain old HTML and will need to be customised for your guide.
 
 The audio guide features the following main pages:
 
@@ -16,15 +16,15 @@ The audio guide features the following main pages:
 
 The guide will work best with 128kbps 16-bit 44.1khz MP3 files.
 
-There is also a simple page at `/connected` as a landing page if you are using Captive Network WiFi pages. Redirect post login pages to this page, and the link with `target="_system"` should make the link open in Safari on iOS devices.
+There is also a simple page at `/connected` as a landing page if you are using Captive Network WiFi pages. Redirect post login pages to this page, and the anchor tags with `target="_system"` should make the links open in Safari on iOS devices.
 
 ## Getting Started
 
-1. Follow the instructions on the Jekyll site for an overview of working with Jekyll.
+1. Follow the instructions on the [Jekyll](http://jekyllrb.com/) site to install Jekyll static site generator on your local dev machine.
 2. Clone this repo and run `jekyll serve`, to see a sample version of the web app.
 3. In the `stops` directory, create numbered markdown files for all the stops in your audio guide.
-4. Each audio guide is just a Page in Jekyll terms, using a layout called `episode`.
-5. Meta-data should be added to the stop of each audio guide stop as follows:
+4. Each audio guide stop is just a page in Jekyll terms, using a layout called `episode`.
+5. Meta-data should be added to the top of each audio guide stop as follows:
   - `layout` - this should be set to `episode`
   - `permalink` - the default structure is `/stops/1` (replace the number with the desired permalink)
   - `type` - set this to `stop` - type is used for generating the slide down menus
