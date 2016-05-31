@@ -59,6 +59,8 @@ If using TeamCity and Octopus for running builds and deployments, a `.nuspec` fi
 
 This site includes `markdown.rb` in the _plugins folder, by Tomotaka Sakuma. The gist on Github is located here: https://gist.github.com/tmtk75/1408402. We found out about it from this post: http://wolfslittlestore.be/2013/10/rendering-markdown-in-jekyll/
 
+The above snippet allows you to easily use markdown includes in the site, however it breaks support for Github pages, so we've removed useage from this repo. In the index.html page for example, you could use `{% markdown overview.md %}` to include the markdown text in `overview.md` without having to write HTML. The on boarding pages could also be refactored to use this.
+
 When the site is added to the homescreen on iOS, we use a code snippet from [iosweblinks](https://github.com/stylr/iosweblinks) (original author [Kyle Barrow](https://gist.github.com/kylebarrow/1042026)) to get links to remain in the web app view rather than opening up Safari.
 
 To check whether or not to make the player fixed position to the bottom of the screen, we borrow the `$.support.fixedPosition` check from jQuery mobile, which doesn't do a true check of the feature, but eliminates known browsers that have issues with that CSS property. This enables fallback to an in-flow position for the player, which makes it sit at the very bottom of the page. We've placed a minimal version of the check in the head of the page, but the full jQuery mobile snippet is here: https://github.com/jquery/jquery-mobile/blob/master/js/support.js

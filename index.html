@@ -5,10 +5,7 @@ layout: master
 
 <div class="home">
 
-{% markdown overview.md %}
-<!--
-  <h1 class="page-heading">Posts</h1>
--->
+  <p>{{ site.index_page_text }}</p>
 
   <ul class="post-list">
     {% assign pages = site.pages | sort: 'page_rank' %}
