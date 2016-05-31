@@ -33,7 +33,7 @@ There is also a simple page at `/connected` as a landing page if you are using C
   - `page_rank` - this is used to order the stops in the menu and slide-down menu
   - `stop_id` - if you wanted, you could give the stop a different ID number to its page rank, but you should probably keep it the same as the permalink and page_rank.
   - `audio_file` - just the filename and extension of the MP3 file to play
-  - `hero_images` - an array of `path` and `alt_text` values for the hero image on the audio guide stop page. Multiple images will appear in an image carousel (using Slick JS). The `path` should just be the image filename and extension. The folder location is set in the main site settings.
+  - `hero_images` - an array of `path` and `alt_text` values for the hero image on the audio guide stop page. Multiple images will appear in an image carousel (using Slick JS). The `path` should just be the image filename and extension. The folder location is set in the main site settings `config.yml`. Good image settings for this are 512 x 341 pixels (1.5:1 aspect ratio) JPEG at 50 - 60% compression.
 6. Update `config.yml` with settings for your particular guide. You can use the default settings, but be sure to update the `title`, `description`, `url` and `twitter` usernames for your site. If you want to change the folder structure for the MP3s or hero images, you can do that here.
 7. Create a new logo and save it over `/assets/img/logo/audio-guide.png`.
 8. Replace the footer logo and link with your own organisation or partner logos in `_includes/footer.html`.
