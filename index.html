@@ -5,11 +5,8 @@ layout: master
 
 <div class="home">
 
-Select an audio guide stop to begin.
-<!--
-  <h1 class="page-heading">Posts</h1>
--->
-
+  <p>{{ site.index_page_text }}</p>
+  
   <ul class="post-list">
     {% assign pages = site.pages | sort: 'page_rank' %}
     {% for my_page in pages %}{% if (my_page.section_title != null) and my_page.type == 'stop' %}<li>

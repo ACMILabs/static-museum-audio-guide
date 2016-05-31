@@ -18,6 +18,7 @@ logo: "/assets/img/logo/audio-guide.png"
 twitter_username: acmilabs
 github_username:  acmilabs
 menu_heading: "Select another stop"
+index_page_text: "Select an audio guide stop to begin."
 headphones_icon_color: "/assets/img/icons/headphones-dark.png"
 headphones_icon_light: "/assets/img/icons/headphones-light.png"
 
