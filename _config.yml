@@ -10,7 +10,7 @@ title: ACMI Audio Guide
 email: your-email@example.com
 description: > # this means to ignore newlines until "baseurl:"
   A web-based audio guide theme for Jekyll.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/static-museum-audio-guide" # the subpath of your site, e.g. /blog
 audio_path: "/audio/"
 episode_hero_path: "/assets/img/stops/"
 url: "http://www.example.com" # the base hostname & protocol for your site
