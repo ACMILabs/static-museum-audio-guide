@@ -4,7 +4,7 @@ A [Jekyll](http://jekyllrb.com/) static site generator theme for building lightw
 
 ## Overview
 
-This template is built on top of the [Jekyll new](https://github.com/jglovier/jekyll-new) theme by [Joel Glovier](http://joelglovier.com/). While it is reusable in its current form, it was purpose built for the Scorsese Exhibition at ACMI. Take a look at a live version, and view the [Scorsese Audio Guide](https://guides.acmi.net.au/scorsese/welcome).
+This template is built on top of the [Jekyll new](https://github.com/jglovier/jekyll-new) theme by [Joel Glovier](http://joelglovier.com/). While it is reusable in its current form, it was purpose built for the Scorsese Exhibition at ACMI. Take a look at a live version, and view the [Scorsese Audio Guide](https://guides.acmi.net.au/scorsese/welcome). For a demo of this version, take a look at the Github pages hosted demo: http://acmilabs.github.io/static-museum-audio-guide/welcome/
 
 Some image editing / Photoshop skills will be required to build a finished guide. Parts of the theme (such as the welcome page) are just plain old HTML and will need to be customised for your guide.
 
