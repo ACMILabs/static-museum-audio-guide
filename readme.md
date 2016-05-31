@@ -75,6 +75,13 @@ Most of the web app (aside from audio!) works without JavaScript, and we've trie
 
 In this repo, we've chosen to keep these libraries as local assets so that running `jekyll serve` or `jekyll build` from the command-line is as simple as possible. However, you may wish to switch to loading these libraries from a [package library](https://www.npmjs.com/) instead.
 
+## More Info
+
+Read the [ACMI Labs](https://labs.acmi.net.au/) blog posts covering this project:
+
+1. [Making the free audio guide for Scorsese](https://labs.acmi.net.au/making-the-free-audio-guide-for-scorsese-3cf5398e5658#)
+2. [An open source museum audio guide](https://labs.acmi.net.au/an-open-source-static-museum-audio-guide-4c5cd83dbdcb#)
+
 ## License
 
 The Static Museum Audio Guide theme is released under the terms of the MIT license. Included JS libraries are covered by their own licenses, included in this repo.
