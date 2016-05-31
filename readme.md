@@ -67,11 +67,13 @@ To check whether or not to make the player fixed position to the bottom of the s
 
 ## Included JS libraries
 
-Most of the web app (aside from audio!) works without JavaScript, and we've tried to keep to a progressive enhancement approach as much as possible. The following JS libraries have been included here. If you're extending this project, you may wish to switch to CDN copies, or concatenate and minify your libraries.
+Most of the web app (aside from audio!) works without JavaScript, and we've tried to keep to a progressive enhancement approach as much as possible. The following JS libraries have been included here, each is covered by their own MIT license also in the repo. If you're extending this project, you may wish to switch to CDN copies, or concatenate and minify your libraries.
 
 1. [jQuery (v1.12.3)](https://jquery.com/)
 2. [Slick JS (v1.6.0)](http://kenwheeler.github.io/slick/)
 3. [jPlayer (v2.9.2)](http://jplayer.org/)
+
+In this repo, we've chosen to keep these libraries as local assets so that running `jekyll serve` or `jekyll build` from the command-line is as simple as possible. However, you may wish to switch to loading these libraries from a [package library](https://www.npmjs.com/) instead.
 
 ## License
 
