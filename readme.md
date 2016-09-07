@@ -82,6 +82,13 @@ Read the [ACMI Labs](https://labs.acmi.net.au/) blog posts covering this project
 1. [Making the free audio guide for Scorsese](https://labs.acmi.net.au/making-the-free-audio-guide-for-scorsese-3cf5398e5658#)
 2. [An open source museum audio guide](https://labs.acmi.net.au/an-open-source-static-museum-audio-guide-4c5cd83dbdcb#)
 
+## Other people using this project
+
+If you've built something using this audio guide template, [let us know](https://twitter.com/ACMILabs) and we'll add your project to this list.
+
+1. [Vila Itororó](https://vilaitororo.github.io/bemvindos/) in São Paulo, Brazil (the tour is in Portuguese). Read [Christophe Buffet's](https://twitter.com/cpjfb) [technical post](https://medium.com/@cpjfb/scorsese-now-has-a-brazilian-clone-adee0a8089a8) on forking the audio guide repo.
+2. [Lustre exhibition audio guide](http://lustre.guide/) for the [Lustre](https://museumvictoria.com.au/immigrationmuseum/whats-on/lustre/) exhibition at the [Immigration Museum](https://museumvictoria.com.au/immigrationmuseum/), part of [Museum Victoria](https://museumvictoria.com.au/) in Melbourne, Australia.
+
 ## License
 
 The Static Museum Audio Guide theme is released under the terms of the MIT license. Included JS libraries are covered by their own licenses, included in this repo.
