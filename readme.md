@@ -86,7 +86,7 @@ Read the [ACMI Labs](https://labs.acmi.net.au/) blog posts covering this project
 
 If you've built something using this audio guide template, [let us know](https://twitter.com/ACMILabs) and we'll add your project to this list.
 
-1. [Vila Itororó](https://vilaitororo.github.io/bemvindos/) in São Paulo, Brazil (the tour is in Portuguese). Read [Christophe Buffet's](https://twitter.com/cpjfb) [technical post](https://medium.com/@cpjfb/scorsese-now-has-a-brazilian-clone-adee0a8089a8) on forking the audio guide repo.
+1. [Vila Itororó](https://vilaitororo.github.io/bemvindos/) in [São Paulo, Brazil](http://vilaitororo.org.br/) (the tour is in Portuguese). Read [Christophe Buffet's](https://twitter.com/cpjfb) [technical post](https://medium.com/@cpjfb/scorsese-now-has-a-brazilian-clone-adee0a8089a8) on forking the audio guide repo.
 2. [Lustre exhibition audio guide](http://lustre.guide/) for the [Lustre](https://museumvictoria.com.au/immigrationmuseum/whats-on/lustre/) exhibition at the [Immigration Museum](https://museumvictoria.com.au/immigrationmuseum/), part of [Museum Victoria](https://museumvictoria.com.au/) in Melbourne, Australia.
 
 ## License
