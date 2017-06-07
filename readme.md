@@ -89,6 +89,7 @@ If you've built something using this audio guide template, [let us know](https:/
 1. [Vila Itororó](https://vilaitororo.github.io/bemvindos/) in [São Paulo, Brazil](http://vilaitororo.org.br/) (the tour is in Portuguese). Read [Christophe Buffet's](https://twitter.com/cpjfb) [technical post](https://medium.com/@cpjfb/scorsese-now-has-a-brazilian-clone-adee0a8089a8) on forking the audio guide repo.
 2. [Lustre exhibition audio guide](http://lustre.guide/) for the [Lustre](https://museumvictoria.com.au/immigrationmuseum/whats-on/lustre/) exhibition at the [Immigration Museum](https://museumvictoria.com.au/immigrationmuseum/), part of [Museum Victoria](https://museumvictoria.com.au/) in Melbourne, Australia.
 3. [A Perfect Chemistry: Photographs by Hill & Adamson](https://audio.nationalgalleries.org/), an [audio tour](https://audio.nationalgalleries.org/hill-and-adamson/index.html) for the [exhibition](https://www.nationalgalleries.org/exhibition/perfect-chemistry-photographs-hill-and-adamson) at [National Galleries of Scotland](https://www.nationalgalleries.org/).
+4. [Voces en Off](https://macpanama.github.io/bienvenidos/) an audio project (in Spanish) for the exhibition [Voces en Off: Artistas Mujeres en la Colección Permanente del Mac](http://www.macpanama.org/exhibiciones/2017/voces_en_off.html) at [Museo de Arte Contemporáneo de Panamá, MAC Panamá](http://www.macpanama.org/)
 
 ## License
 
