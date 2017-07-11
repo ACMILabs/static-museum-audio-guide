@@ -2,6 +2,10 @@
 
 A [Jekyll](http://jekyllrb.com/) static site generator theme for building lightweight audio tours for exhibitions or museums.
 
+## Kiosk branch
+
+This is a branch of the Static Museum Audio Guide that replaces absolute URLs with relative URLs, specifying a direct .html file. Certain Kiosk app software (such as [Kiosk Pro](http://www.kioskproapp.com/)) requires this, and it means that without adding a URL rewrite at the server level, `index.html` files will be served directly. If you're not intending on running the audio guide from a Kiosk app, use the Master branch instead.
+
 ## Overview
 
 This template is built on top of the [Jekyll new](https://github.com/jglovier/jekyll-new) theme by [Joel Glovier](http://joelglovier.com/). While it is reusable in its current form, it was purpose built for the Scorsese Exhibition at ACMI. Take a look at a live version, and view the [Scorsese Audio Guide](https://guides.acmi.net.au/scorsese/welcome). For a demo of this version, take a look at the Github pages hosted demo: http://acmilabs.github.io/static-museum-audio-guide/welcome/

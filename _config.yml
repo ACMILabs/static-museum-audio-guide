@@ -22,6 +22,9 @@ index_page_text: "Select an audio guide stop to begin."
 headphones_icon_color: "/assets/img/icons/headphones-dark.png"
 headphones_icon_light: "/assets/img/icons/headphones-light.png"
 
+# Defaults (set to add .html extensions)
+permalink: /:path/:basename:output_ext
+
 # Build settings
 markdown: kramdown
 

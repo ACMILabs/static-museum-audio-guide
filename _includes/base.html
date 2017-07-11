@@ -1,0 +1,15 @@
+{% comment %} 
+
+This is a code snippet to create relative base path, thanks to https://ricostacruz.com/til/relative-paths-in-jekyll/
+
+{% endcomment %}
+
+{% assign base = '' %}
+{% assign depth = page.url | split: '/' | size | minus: 1 %}
+
+{% if depth <= 1 %}{% assign base = '.' %}
+{% elsif depth == 2 %}{% assign base = '..' %}
+{% elsif depth == 3 %}{% assign base = '../..'} %}
+{% elsif depth == 4 %}{% assign base = '../../..' %}
+
+{% endif %}

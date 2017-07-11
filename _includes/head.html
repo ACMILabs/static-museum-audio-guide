@@ -29,18 +29,18 @@
 
   <!-- Stylesheets -->
 
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/js/slick.css" />
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/js/slick-theme.css" />
+  <link rel="stylesheet" type="text/css" href="{{ base }}/assets/js/slick.css" />
+  <link rel="stylesheet" type="text/css" href="{{ base }}/assets/js/slick-theme.css" />
 
   <!-- jQuery -->
-  <script src="{{ site.baseurl }}/assets/js/jquery-1.12.3.min.js"></script>
-  <script src="{{ site.baseurl }}/assets/js/slick.min.js"></script>
+  <script src="{{ base }}/assets/js/jquery-1.12.3.min.js"></script>
+  <script src="{{ base }}/assets/js/slick.min.js"></script>
 
   <!-- jPlayer -->
-  <script src="{{ site.baseurl }}/assets/js/jplayer/jquery.jplayer.min.js"></script>
+  <script src="{{ base }}/assets/js/jplayer/jquery.jplayer.min.js"></script>
 
   <!-- CSS for this web app -->
-  <link rel='stylesheet' href='{{ "/assets/css/main.css" | prepend: site.baseurl }}?v={{ site.version_number }}'>
+  <link rel='stylesheet' href='{{ "/assets/css/main.css" | prepend: base }}?v={{ site.version_number }}'>
 
   <script type="text/javascript">
 
@@ -109,33 +109,33 @@ if ($.support.fixedPosition) {
 // It's a whole document event listener, so will continue to work even if other links are added to the DOM after
 // the initial pageload. The while loop ensures that it bubbles up to hit any anchor links that have been clicked.
 
-  (function(document,navigator,standalone) {
-    // prevents links from apps from oppening in mobile safari
-    // this javascript must be the first script in your <head>
-    if ((standalone in navigator) && navigator[standalone]) {
-      var curnode, location=document.location, stop=/^(a|html)$/i;
-      document.addEventListener('click', function(e) {
-        curnode=e.target;
+  // (function(document,navigator,standalone) {
+  //   // prevents links from apps from oppening in mobile safari
+  //   // this javascript must be the first script in your <head>
+  //   if ((standalone in navigator) && navigator[standalone]) {
+  //     var curnode, location=document.location, stop=/^(a|html)$/i;
+  //     document.addEventListener('click', function(e) {
+  //       curnode=e.target;
         
-        while (!(stop).test(curnode.nodeName)) {
-          curnode=curnode.parentNode;
-        }
-        // Condidions to do this only on links to your own app
-        // if you want all links, use if('href' in curnode) instead.
-        if (curnode.className.indexOf("dont-use-ios-override") == -1) {
-          if(
-            'href' in curnode && // is a link
-            (chref=curnode.href).replace(location.href,'').indexOf('#') && // is not an anchor
-            ( !(/^[a-z\+\.\-]+:/i).test(chref) ||                       // either does not have a proper scheme (relative links)
-              chref.indexOf(location.protocol+'//'+location.host)===0 ) // or is in the same protocol and domain
-          ) {
-            e.preventDefault();
-            location.href = curnode.href;
-          }
-        }
-      },false);
-    }
-  })(document,window.navigator,'standalone');
+  //       while (!(stop).test(curnode.nodeName)) {
+  //         curnode=curnode.parentNode;
+  //       }
+  //       // Condidions to do this only on links to your own app
+  //       // if you want all links, use if('href' in curnode) instead.
+  //       if (curnode.className.indexOf("dont-use-ios-override") == -1) {
+  //         if(
+  //           'href' in curnode && // is a link
+  //           (chref=curnode.href).replace(location.href,'').indexOf('#') && // is not an anchor
+  //           ( !(/^[a-z\+\.\-]+:/i).test(chref) ||                       // either does not have a proper scheme (relative links)
+  //             chref.indexOf(location.protocol+'//'+location.host)===0 ) // or is in the same protocol and domain
+  //         ) {
+  //           e.preventDefault();
+  //           location.href = curnode.href;
+  //         }
+  //       }
+  //     },false);
+  //   }
+  // })(document,window.navigator,'standalone');
 
 // Initialise jPlayer, grabbed the MP3 source file from the audio element on the page.
 $(document).ready(function(){
@@ -163,5 +163,5 @@ $(document).ready(function(){
 
   </script>
     <!-- JS for this web app -->
-  <script src="{{ site.baseurl }}/assets/js/main.js?v={{ site.version_number }}"></script>
+  <script src="{{ base }}/assets/js/main.js?v={{ site.version_number }}"></script>
 </head>
