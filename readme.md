@@ -47,6 +47,28 @@ There is also a simple page at `/connected` as a landing page if you are using C
 
 Each time you update the JS or CSS files, you may wish to update `version_number` in `config.yml`. This is appended a query string to the CSS link and JS script tag in the Head element for [cache busting](https://css-tricks.com/strategies-for-cache-busting-css/).
 
+### Sass
+
+In order to build and serve sites you'll need to have the [Sass](https://sass-lang.com/) preprocessor scripting language installed. For details consult the [Sass installation documentation](https://sass-lang.com/install/).
+
+### gojekyll
+
+You can also use the [Gojekyll](https://github.com/osteele/gojekyll) project to build and serve the website if you want. To install `gojekyll` you will need a copy of the [Go programming language](https://go.dev) then type:
+
+```
+go install github.com/osteele/gojekyll
+```
+
+Once installed simply replace all the calls to `jekyll` with `gojekyll`. For example:
+
+```
+> gojekyll serve
+Configuration file: /usr/local/sfomuseum/static-museum-audio-guide/_config.yml
+            Source: /usr/local/sfomuseum/static-museum-audio-guide
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.
+```
+
 ## Deployment
 
 Since this is just a straightforward Jekyll site, you can deploy it straight to Github pages. Follow the instructions here: https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/
@@ -69,8 +91,8 @@ To check whether or not to make the player fixed position to the bottom of the s
 
 Most of the web app (aside from audio!) works without JavaScript, and we've tried to keep to a progressive enhancement approach as much as possible. The following JS libraries have been included here, each is covered by their own MIT license also in the repo. If you're extending this project, you may wish to switch to CDN copies, or concatenate and minify your libraries.
 
-1. [jQuery (v1.12.3)](https://jquery.com/)
-2. [Slick JS (v1.6.0)](http://kenwheeler.github.io/slick/)
+1. [jQuery (v3.7.1)](https://jquery.com/)
+2. [Slick JS (v1.8.1)](http://kenwheeler.github.io/slick/)
 3. [jPlayer (v2.9.2)](http://jplayer.org/)
 
 In this repo, we've chosen to keep these libraries as local assets so that running `jekyll serve` or `jekyll build` from the command-line is as simple as possible. However, you may wish to switch to loading these libraries from a [package library](https://www.npmjs.com/) instead.
