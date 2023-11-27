@@ -53,10 +53,10 @@ In order to build and serve sites you'll need to have the [Sass](https://sass-la
 
 ### gojekyll
 
-You can also use the [Gojekyll](https://github.com/osteele/gojekyll) project to build and serve the website if you want. To install `gojekyll` you will need a copy of the [Go programming language](https://go.dev) then type:
+You can also use the [Gojekyll](https://github.com/osteele/gojekyll) project to build and serve the website if you want. To install `gojekyll` you will need a copy of the [Go programming language](https://go.dev) (version 1.20 or higher) then type:
 
 ```
-go install github.com/osteele/gojekyll
+go install github.com/osteele/gojekyll@latest
 ```
 
 Once installed simply replace all the calls to `jekyll` with `gojekyll`. For example:
