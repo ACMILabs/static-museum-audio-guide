@@ -2,10 +2,10 @@
 layout: episode
 permalink: /stops/1/
 type: stop
-section_title: 1_BillStoryWelcome.mp3
+section_title: 1-21
 title: 
 page_rank: 1
-stop_id: 1
-audio_file: 1_BillStoryWelcome.mp3
+stop_id: MAIN
+audio_file: 
 
 ---
