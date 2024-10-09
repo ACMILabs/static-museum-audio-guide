@@ -1,5 +1,5 @@
 ---
-layout: episode
+layout: Display
 permalink: /stops/1/
 type: stop
 section_title: 1-21
