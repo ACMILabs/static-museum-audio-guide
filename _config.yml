@@ -6,17 +6,17 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: ACMI Audio Guide
-email: your-email@example.com
+title: Bill's Bike Barn Audio Guide
+email: billsoldbikebarn@pa.metrocast.net
 description: > # this means to ignore newlines until "baseurl:"
-  A web-based audio guide theme for Jekyll.
+  A web-based audio guide.
 baseurl: "" # the subpath of your site, e.g. /blog
 audio_path: "/audio/"
 episode_hero_path: "/assets/img/stops/"
 url: "http://www.example.com" # the base hostname & protocol for your site
 logo: "/assets/img/logo/audio-guide.png"
-twitter_username: acmilabs
-github_username:  acmilabs
+twitter_username: Bill's Bike Barn
+github_username:  
 menu_heading: "Select another stop"
 index_page_text: "Select an audio guide stop to begin."
 headphones_icon_color: "/assets/img/icons/headphones-dark.png"
